@@ -1,14 +1,18 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
-export default function App() {
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Navbar from './components/Navbar'
+
+function App() {
   return (
-    <header>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </header>
-  );
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </>
+  )
 }
+
+export default App
